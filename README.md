@@ -186,7 +186,7 @@ PK-сэмплинг: positive с другой `camera_id` того же `vehicle
 |----------------------|----------|-------------|
 | LR backbone          | 1e-4     | 4e-5        |
 | LR проекции / головы | 1e-3     | 1e-3        |
-| Epochs               | 8        | 17          |
+| Epochs               | 7        | 17          |
 | Warmup               | 1        | 1           |
 | Batch (изображений)  | 32       | 16 × 3 (PK) |
 | AMP                  | bfloat16 | bfloat16    |
