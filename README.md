@@ -162,9 +162,6 @@ AMP bfloat16.
 нормированный на среднее. Аугментации: `Resize(224)`, `RandomHorizontalFlip`,
 `TrivialAugmentWide`, `RandomErasing`.
 
-8 эпох, warmup 1, линейный спад LR. Оптимизатор — **Muon** (для 2D-весов) +
-Adam (для LayerNorm, bias и прочего).
-
 ### Этап 2 — finetune (metric learning)
 
 PK-сэмплинг: positive с другой `camera_id` того же `vehicle_id`, hard negative —
