@@ -30,12 +30,13 @@ class Model(nn.Module):
     def __init__(self, weights_dir: Path, device: str) -> None:
         super(Model, self).__init__()
         self.backbone = ConvNextV2ForImageClassification.from_pretrained(
-            weights_dir, device_map=device
-        )
+            weights_dir
+        ).to(device)
         self.proj = nn.Linear(1024, 512, bias=False, device=device)
         self.proj.load_state_dict(
-            torch.load(weights_dir / "proj.pt", map_location=device)
+            torch.load(weights_dir / "proj.pt", map_location=device, weights_only=True)
         )
+        self.eval()
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         embeds = self.proj(self.backbone(pixel_values=x).logits)
@@ -167,7 +168,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--gallery-csv", type=Path, required=True)
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--weights-dir", type=Path, default="weights/")
-    parser.add_argument("--threshold", type=float, default=0.7578)
+    parser.add_argument("--threshold", type=float, default=0.9518)
     parser.add_argument("--batch-size", type=int, default=32)
     parser.add_argument("--num-workers", type=int, default=4)
     parser.add_argument(
