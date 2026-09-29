@@ -34,8 +34,7 @@ weights/
 Backbone после первого этапа обучения (classification pretrain). Нужен только
 для воспроизведения finetune и для сравнения с финальной моделью.
 
-Скачать: *
-*[backbone после pretrain](https://drive.google.com/drive/folders/13869A0w3tQfdIEBwTiNLGaomSUgAo6J5?usp=sharing)**
+Скачать: **[backbone после pretrain](https://drive.google.com/drive/folders/13869A0w3tQfdIEBwTiNLGaomSUgAo6J5?usp=sharing)**
 
 Для запуска инференса этот каталог не требуется — используется только `weights/`.
 
