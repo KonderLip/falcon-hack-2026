@@ -135,6 +135,7 @@ class VehicleExtractor:
 
     def _forward(self, tensor: torch.Tensor) -> torch.Tensor:
         tensor = tensor.to(self.device)
-        embeds = self.proj(self.backbone(pixel_values=tensor).logits)
+        with torch.amp.autocast("cuda", dtype=torch.bfloat16):
+            embeds = self.proj(self.backbone(pixel_values=tensor).logits)
         embeds = F.normalize(embeds.float(), p=2, dim=-1)
         return embeds.cpu()
