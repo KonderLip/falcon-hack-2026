@@ -2,6 +2,7 @@ services:
   inference:
     build: .
     image: falcon-reid:latest
+    shm_size: '4gb'
     volumes:
       - ${DATA_DIR:-./data}:/data:ro
       - ${OUTPUT_DIR:-./submission}:/output
