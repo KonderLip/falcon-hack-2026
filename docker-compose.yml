@@ -1,0 +1,14 @@
+services:
+  inference:
+    build: .
+    image: falcon-reid:latest
+    volumes:
+      - ${DATA_DIR:-./data}:/data:ro
+      - ${OUTPUT_DIR:-./submission}:/output
+    command: >
+      python3 -m inference
+      --images-dir /data/images
+      --query-csv /data/test_query.csv
+      --gallery-csv /data/test_gallery.csv
+      --output-dir /output
+    gpus: all
