@@ -17,9 +17,7 @@
 ### `weights/`
 
 Готовые веса модели (backbone + проекция), используются на инференсе.
-**Обязательно скачать:**
-
-https://drive.google.com/drive/folders/1dwPs--m01I6z9IN59Ow80hH8XRyJZ0jS?usp=sharing
+**Обязательно скачать: [веса модели](https://drive.google.com/drive/folders/1dwPs--m01I6z9IN59Ow80hH8XRyJZ0jS?usp=sharing)**
 
 Ожидаемая структура:
 
@@ -35,7 +33,7 @@ weights/
 Backbone после первого этапа обучения (classification pretrain). Нужен только
 для воспроизведения finetune и для сравнения с финальной моделью.
 
-https://drive.google.com/drive/folders/13869A0w3tQfdIEBwTiNLGaomSUgAo6J5?usp=sharing
+Скачать: **[backbone после pretrain](https://drive.google.com/drive/folders/13869A0w3tQfdIEBwTiNLGaomSUgAo6J5?usp=sharing)**
 
 Для запуска инференса этот каталог не требуется — используется только `weights/`.
 
@@ -117,8 +115,9 @@ Swagger UI: `http://localhost:8000/docs`.
 | combo | 0.6445 |
 | **Ожидаемый балл** | **≈ 6.45 / 10** |
 
-Кривые `F1 / TNR / combo` и распределения score для positive/negative —
-`figures/threshold_choice.png`.
+Кривые `F1 / TNR / combo` и распределения score для positive/negative:
+
+![Кривые метрик и распределения score](figures/threshold_choice.png)
 
 ### Калибровка на тесте
 
