@@ -18,9 +18,7 @@ def evaluate(
     # Official ReID evaluation:
     # same vehicle AND different camera.
     positive = (
-        (q_vehicle[:, None] == g_vehicle[None, :])
-        &
-        (q_camera[:, None] != g_camera[None, :])
+        (q_vehicle[:, None] == g_vehicle[None, :]) & (q_camera[:, None] != g_camera[None, :])
     )
 
     aps = []
