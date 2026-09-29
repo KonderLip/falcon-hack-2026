@@ -38,7 +38,7 @@ def kfold_split(
     folds = []
 
     for i in range(n_splits):
-        val_ids = vehicle_ids[i * n_val:(i + 1) * n_val]
+        val_ids = vehicle_ids[i * n_val : (i + 1) * n_val]
         mask = df["vehicle_id"].isin(val_ids)
 
         train_df = df[~mask].reset_index(drop=True)
