@@ -17,7 +17,8 @@
 ### `weights/`
 
 Готовые веса модели (backbone + проекция), используются на инференсе.
-**Обязательно скачать: [веса модели](https://drive.google.com/drive/folders/1dwPs--m01I6z9IN59Ow80hH8XRyJZ0jS?usp=sharing)**
+**Обязательно
+скачать: [веса модели](https://drive.google.com/drive/folders/1dwPs--m01I6z9IN59Ow80hH8XRyJZ0jS?usp=sharing)**
 
 Ожидаемая структура:
 
@@ -33,7 +34,8 @@ weights/
 Backbone после первого этапа обучения (classification pretrain). Нужен только
 для воспроизведения finetune и для сравнения с финальной моделью.
 
-Скачать: **[backbone после pretrain](https://drive.google.com/drive/folders/13869A0w3tQfdIEBwTiNLGaomSUgAo6J5?usp=sharing)**
+Скачать: *
+*[backbone после pretrain](https://drive.google.com/drive/folders/13869A0w3tQfdIEBwTiNLGaomSUgAo6J5?usp=sharing)**
 
 Для запуска инференса этот каталог не требуется — используется только `weights/`.
 
@@ -107,12 +109,12 @@ Swagger UI: `http://localhost:8000/docs`.
 
 На пуле:
 
-| Метрика | Значение |
-|---|---|
-| `best_thr` | 0.7578 |
-| F1 | 0.7487 |
-| TNR | 0.4014 |
-| combo | 0.6445 |
+| Метрика            | Значение        |
+|--------------------|-----------------|
+| `best_thr`         | 0.7578          |
+| F1                 | 0.7487          |
+| TNR                | 0.4014          |
+| combo              | 0.6445          |
 | **Ожидаемый балл** | **≈ 6.45 / 10** |
 
 Кривые `F1 / TNR / combo` и распределения score для positive/negative:
@@ -184,15 +186,15 @@ PK-сэмплинг: positive с другой `camera_id` того же `vehicle
 
 ### Гиперпараметры
 
-| Параметр | Pretrain | Finetune |
-|---|---|---|
-| LR backbone | 1e-4 | 4e-5 |
-| LR проекции / головы | 1e-3 | 1e-3 |
-| Epochs | 8 | 17 |
-| Warmup | 1 | 1 |
-| Batch (изображений) | 32 | 16 × 3 (PK) |
-| AMP | bfloat16 | bfloat16 |
-| Grad clip | — | 1.0 |
+| Параметр             | Pretrain | Finetune    |
+|----------------------|----------|-------------|
+| LR backbone          | 1e-4     | 4e-5        |
+| LR проекции / головы | 1e-3     | 1e-3        |
+| Epochs               | 8        | 17          |
+| Warmup               | 1        | 1           |
+| Batch (изображений)  | 32       | 16 × 3 (PK) |
+| AMP                  | bfloat16 | bfloat16    |
+| Grad clip            | —        | 1.0         |
 
 ### Валидация
 
@@ -203,13 +205,13 @@ mAP@10 по фолдам: **0.783 ± 0.005**. На тесте mAP@10 счита�
 
 ## Внешние источники
 
-| Источник | Назначение |
-|---|---|
-| [ConvNeXt-V2-Base-22k-224](https://huggingface.co/facebook/convnextv2-base-22k-224) | pretrained backbone |
-| [CompCars](https://mmlab.ie.cuhk.edu.hk/datasets/comp_cars/instruction.txt) | pretrain |
-| [Car-1000](https://github.com/toggle1995/Car-1000) | pretrain |
+| Источник                                                                            | Назначение              |
+|-------------------------------------------------------------------------------------|-------------------------|
+| [ConvNeXt-V2-Base-22k-224](https://huggingface.co/facebook/convnextv2-base-22k-224) | pretrained backbone     |
+| [CompCars](https://mmlab.ie.cuhk.edu.hk/datasets/comp_cars/instruction.txt)         | pretrain                |
+| [Car-1000](https://github.com/toggle1995/Car-1000)                                  | pretrain                |
 | [pytorch-metric-learning](https://github.com/KevinMusgrave/pytorch-metric-learning) | CircleLoss, CosFaceLoss |
-| [Muon](https://github.com/KellerJordan/Muon) | оптимизатор |
+| [Muon](https://github.com/KellerJordan/Muon)                                        | оптимизатор             |
 
 Использование государственных регистрационных знаков или их остаточных
 признаков в обучении и инференсе исключено: изображения поступают с уже
