@@ -5,10 +5,3 @@ data/images/
 
 !/Car-1000/boxes.csv
 !/CompCars/boxes.csv
-
-BoxCars/
-CityFlowV2-ReID/
-runs/
-VeRi-776/
-VMMRdb/
-VRIC/
