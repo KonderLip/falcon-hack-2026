@@ -8,4 +8,7 @@ RUN pip install -r requirements.txt
 COPY inference.py /app/inference.py
 COPY weights/ /app/weights/
 
+COPY extractor.py /app/extractor.py
+COPY api.py /app/api.py
+
 CMD ["python", "-m", "inference", "--help"]
